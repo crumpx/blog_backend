@@ -29,5 +29,4 @@ var Blog = mongoose.Schema({
   timestamps: true
 })
 
-
 module.exports = mongoose.model('Blog', Blog);
