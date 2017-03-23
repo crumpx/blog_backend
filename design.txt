@@ -1,0 +1,26 @@
+Portfolio backend.
+
+  blog
+  User function with passport local(only one user)
+
+  Database Model:
+
+    User : username, password
+
+    Blog: title, subtitle, date, content, tag, author(User), comments[{comment,user }]
+
+  authentication
+    passport bearer token authenticate
+
+
+  interface
+    with portfolio frontend
+    user log in and create/modify/delete blog entry
+      http: get, post, put, delete
+
+
+  tech specs:
+
+    no need to secure api for getting post
+
+    login page in frontend /blog
