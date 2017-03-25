@@ -8,7 +8,6 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-
   Account.find({}, function (err, docs) {
     res.send(JSON.stringify(docs))
   })
@@ -30,6 +29,11 @@ router.post('/register', function(req, res, next){
     })
   })
 })
+
+router.post('/login', passport.authenticate('local'), function(req, res){
+  console.log('hello');
+	res.send(JSON.stringify(req.user));
+});
 
 
 

@@ -21,6 +21,9 @@ var Blog = mongoose.Schema({
     }
   }],
   tag: [],
+  likes: {
+    type: Number
+  },
   author: {
       type: mongoose.Schema.ObjectId,
       ref: 'Account',

@@ -55,8 +55,16 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+
+
 mongoose.connect( envs.dburi || process.env.MONGODB_URI);
 
+var Account = require('./models/account');
+
+passport.use(Account.createStrategy());
+
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
