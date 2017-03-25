@@ -16,13 +16,13 @@ var Blog = mongoose.Schema({
   comments: [{
     comment: String,
     user: {
-      type: Schema.ObjectId,
+      type: mongoose.Schema.ObjectId,
       ref: 'Account',
     }
   }],
   tag: [],
   author: {
-      type: Schema.ObjectId,
+      type: mongoose.Schema.ObjectId,
       ref: 'Account',
     },
 },{

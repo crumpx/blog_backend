@@ -9,10 +9,10 @@ var session = require('express-session');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-
+var envs = require('./config');
 var mongoose = require('mongoose');
 var passport = require('passport');
-var envs = require('./config');
+
 
 require('./config/passport')(passport);
 
@@ -55,7 +55,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-mongoose.connect(process.env.MONGODB_URI || envs.dbrui);
+mongoose.connect( envs.dburi || process.env.MONGODB_URI);
 
 // error handler
 app.use(function(err, req, res, next) {
